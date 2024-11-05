@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Катерина Левчук - Бізнесвумен і фермерка</title>
+    
+    <!-- CSS стилі -->
+    <style>
+
+
+   
+
+/* Встановлення кожної секції на всю висоту екрану */
+.about, .projects, .gallery, .contact {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Оновлені стилі для секцій на всю висоту екрану */
+.about, .projects, .gallery, .contact {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px; /* Додано більше відступів для уникнення налазання */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.about h2, .projects h2, .gallery h2, .contact h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #6a11cb;
+}
+
+.about p, .projects .project-card, .gallery .gallery-container, .contact p, .contact .contact-form {
+    max-width: 80%; /* Встановлено максимальну ширину для тексту і блоків */
+    margin: 0 auto; /* Вирівнювання по центру */
+    line-height: 1.6;
+}
+
+/* Фон для всієї сторінки */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Оновлені стилі для секцій */
+.about, .projects, .gallery, .contact {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.85); /* Напівпрозорий білий фон для блоків */
+    border-radius: 15px; /* Округлені краї для м'якшого вигляду */
+    max-width: 800px; /* Обмеження ширини для естетичності */
+    margin: 20px auto; /* Центрування кожної секції */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Легка тінь для відділення від фону */
+}
+
+.about h2, .projects h2, .gallery h2, .contact h2 {
+    color:#FFFFFF; /* Заголовок з акцентним кольором */
+}
+
+.about p, .projects .project-card, .gallery .gallery-container, .contact p, .contact .contact-form {
+    color:#FFFFFF; /* Основний колір тексту для хорошого контрасту */
+    line-height: 1.6;
+}
+
+/* Напівпрозорий фон і тінь для кожної секції */
+.about, .projects, .gallery, .contact {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий білий фон */
+    border-radius: 15px; /* Округлені краї */
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Тінь для контрасту */
+}
+
+/* Кнопка "Повернутися назад" */
+.back-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #6a11cb;
+    background-color: white;
+    border: 2px solid #6a11cb;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #2575fc;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+        /* Загальні стилі */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f8;
+            color: #333;
+        }
+
+        /* Фіолетовий градієнт для хедера */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Стиль кнопки */
+        header button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            color: #6a11cb;
+            background-color: white;
+            border: 2px solid #6a11cb;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        header button:hover {
+            background-color: #2575fc;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Стиль навігаційного меню */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(106, 17, 203, 0.9);
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff8a00;
+        }
+
+        /* Секції */
+        /* Додаткові відступи між секціями */
+.about, .projects, .gallery, .contact {
+    margin: 15px auto; /* Збільшено відступ зверху та знизу */
+}
+
+        
+
+        .about h2, .projects h2, .gallery h2, .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color:#FFFFFF;;
+        }
+
+       /* Стилі для блоку "Про мене" */
+.about {
+    max-width: 800px;
+    margin: 25px auto;
+    background: transparent;
+    border-radius: 10px; /* Округлені краї */
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Тінь справа */
+    line-height: 1.7;
+    animation: fadeIn 2s ease;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #FFFFFF; /* Білий колір тексту */
+}
+
+.about p span {
+    color: #D8BFD8; /* Лавандовий колір */
+    font-weight: bold;
+}
+
+.about p::first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #D8BFD8; /* Лавандовий для першої літери */
+}
+
+
+        /* Анімація */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+      /* Стилі для секції "Проєкти" */
+.projects {
+    text-align: center;
+    background: transparent;
+    padding: 50px;
+    border-radius: 15px;
+    max-width: 800px;
+     margin: 35px auto;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Тінь справа */
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Напівпрозорий білий фон */
+    border-radius: 10px;
+    margin: 25px 0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Збільшена тінь при наведенні */
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #FFFFFF; /* Білий колір для заголовка */
+}
+
+.project-card p {
+    color: #FFFFFF; /* Білий колір для тексту */
+}
+
+button {
+    background-color: #e6c1ff;
+    color: #FFFFFF; /* Білий текст для кнопки */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #6a0dad, #a36eff);
+}
+
+.project-details {
+    margin-top: 15px;
+    color: #FFFFFF; /* Білий колір для деталей проєкту */
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: none;
+}
+
+/* Фотогалерея */
+.gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Тінь справа */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: transparent;
+            color: white;
+        }
+
+        footer a {
+            color: #ff8a00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+   
+
+    <!-- Головний блок -->
+    <header>
+        <h1>Привіт! Я - Катерина Левчук</h1>
+        <p>Бізнесвумен, фермерка-свиновод та SMM-спеціалістка</p>
+        <!-- Видаліть блок з кнопкою -->
+<!-- <button onclick="scrollToSection()">Дізнатися більше</button> -->
+
+<!-- Додайте новий код меню замість кнопки -->
+<div id="dynamicNav" class="dynamic-nav">
+    <ul>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#projects">Проєкти</a></li>
+        <li><a href="#gallery">Фотогалерея</a></li>
+        <li><a href="#contact">Контакти</a></li>
+    </ul>
+</div>
+
+    </header>
+
+
+
+
+    <!-- Секція "Про мене" -->
+    <section id="about" class="about">
+        <h2>Про мене</h2>
+        <p>Привіт! Мене звати <span>Катерина Левчук</span>, і я щаслива поєднувати дві зовсім різні, але напрочуд доповнюючі одна одну сфери: сучасний маркетинг і традиційне фермерство. Як <span>SMM-спеціалістка</span>, я не просто просуваю бренди — я допомагаю компаніям розповідати захопливі історії, що викликають емоції та привертають увагу. Але моя справжня гордість — це невеличка, але процвітаюча <span>свиноферма</span>.</p>
+    <button class="back-button" onclick="scrollToTop()">Повернутися назад</button>
+
+</section>
+
+    <!-- Секція "Проєкти" -->
+    <<section id="projects" class="projects">
+    <h2>Мої проєкти</h2>
+    
+    <!-- Проєкт 1 -->
+    <div class="project-card">
+        <h3>Еко-Свиноферма</h3>
+        <p>Екологічне вирощування свиней з мінімальним впливом на природу та високими стандартами якості.</p>
+        <button onclick="toggleProjectDetails('ecoFarmDetails')">Дізнатися більше</button>
+        <div id="ecoFarmDetails" class="project-details">
+            <p>На нашій еко-свинофермі ми застосовуємо новітні методи годування та догляду, щоб зберегти природні ресурси і зменшити викиди. Завдяки використанню біотехнологій, ферма є максимально екологічною, також ми намагаємося використовувати відходи доцільно та корисно.Відходи життєдіяльності свиней використовуємо для добрива наших земельних ділянок, чим збільшуємо врожайність, тим самим виключаємо виеористання хімічних та небезпечних відходів.Але час очікування коли добриво стане "готовим" для додавання в грунт займає багато часу(декілька років), ми вирішили використовувати каліфорнійських черв’яків. Однією з головних біологічних особливостей каліфорнійських черв’яків є наявність у них особливих знезаражувальних ферментів. Внесення біогумусу в ґрунт нормалізує розвиток властивих здоровому ґрунту мікробних асоціацій. Він перевершує гній і компости за вмістом гумусу в 4-8 разів.</p>
+        </div>
+        <button class="back-button" onclick="scrollToTop()">Повернутися назад</button>
+    </div>
+    
+    <!-- Проєкт 2 -->
+    <div class="project-card">
+        <h3>Локальна фермерська продукція</h3>
+        <p>Продаж свіжих фермерських продуктів із власного господарства на місцевих ринках і онлайн.</p>
+        <button onclick="toggleProjectDetails('localProductsDetails')">Дізнатися більше</button>
+        <div id="localProductsDetails" class="project-details">
+            <p>Наша продукція відрізняється свіжістю та високою якістю. Ми пропонуємо натуральні м'ясні продукти, виготовлені без використання штучних добавок. Споживачі можуть замовляти товари через інтернет або придбати їх на місцевих фермерських ринках.</p>
+        </div>
+        <button class="back-button" onclick="scrollToTop()">Повернутися назад</button>
+    </div>
+</section>
+
+    
+  
+    <!-- Секція "Фотогалерея" -->
+    <section id="gallery" class="gallery">
+        <h2>Фотогалерея</h2>
+        <div class="gallery-container">
+            <img src="https://avatars.dzeninfra.ru/get-zen_doc/3985451/pub_5f9a7265903708582170acc6_5f9a72cb2603b20d5152540b/scale_2400" alt="Фото 1">
+            <img src="https://avatars.dzeninfra.ru/get-zen_doc/1898210/pub_5f9b6b409e5bc33f0da3b3de_5f9b6b4bc0a24c2787d5bb0a/scale_1200" alt="Фото 2">
+            <img src="https://avatars.dzeninfra.ru/get-zen_doc/3644947/pub_5f9b6d0338725f3ad6a986db_5f9b6d109e5bc33f0da444a3/scale_2400" alt="Фото 3">
+            <img src="https://rms8.kufar.by/v1/gallery/adim1/c42b287c-aa2e-41f6-a6a3-93cf00261d9a.jpg" alt="Фото 4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROD9mD5Iv-KdUvYS8log6NJTjwJmRyAJw4AA&s" alt="Фото 5">
+        </div>
+   <button class="back-button" onclick="scrollToTop()">Повернутися назад</button>
+
+ </section>
+
+    <!-- Секція "Контакти" -->
+    <section id="contact" class="contact">
+        <h2>Контакти</h2>
+        <p>Зв’яжіться зі мною за допомогою наступної інформації:</p>
+        <p>Email: <a href="mailto:eka.levchuk@gmail.com">eka.levchuk@gmail.com</a></p>
+        <p>Телефон: <a href="tel:+380675843972">+380 675 84 39 72</a></p>
+        <form action="#" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Ваше ім'я" required>
+            <input type="email" name="email" placeholder="Ваш Email" required>
+            <textarea name="message" placeholder="Ваше повідомлення" rows="5" required></textarea>
+            <button type="submit">Відправити</button>
+        </form>
+    <button class="back-button" onclick="scrollToTop()">Повернутися назад</button>
+
+</section>
+<!-- Футер -->
+    <footer>
+        <p>Зв'яжіться зі мною: <a href="mailto:eka.levchuk@gmail.com">eka.levchuk@gmail.com</a> | (067) 584-39-72</p>
+    </footer>
+
+    <!-- Додамо CSS для нових секцій -->
+    <style>
+        /* Стилі для фотогалереї */
+        .gallery {
+            max-width: 800px;
+             margin: 35px auto;
+            padding: 50px 0;
+            background: transparent;
+            border-radius: 15px;
+             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Тінь справа */
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* Стилі для контактної секції */
+.contact {
+    max-width: 500px;
+     margin: 15px auto;
+    padding: 40px 10px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Тінь справа */
+    color: #FFFFFF; /* Білий текст */
+}
+
+.contact h2 {
+    color: #FFFFFF; /* Білий колір для заголовка */
+}
+
+.contact a {
+    color: #FFFFFF; /* Білий колір для посилань */
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    border: 2px solid #FFFFFF; /* Білий колір для рамок */
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Напівпрозорий білий фон */
+    color: #FFFFFF; /* Білий текст */
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #FFFFFF; /* Білий текст для плейсхолдерів */
+}
+
+.contact-form button {
+    background-color: #6a0dad;
+    color: #FFFFFF;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #a36eff;
+}
+
+/* Стиль для динамічного меню */
+#dynamicNav {
+    background-color: rgba(106, 17, 203, 0.9);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#dynamicNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+#dynamicNav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#dynamicNav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#dynamicNav ul li a:hover {
+    color: #ff8a00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+<script>
+    function scrollToSection() {
+        document.getElementById('dynamicNav').style.display = 'block';
+        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+<script>
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+</script>
+<script>
+    function toggleProjectDetails(id) {
+        const details = document.getElementById(id);
+        if (details.style.display === "none" || !details.style.display) {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+</body>
+</html>
